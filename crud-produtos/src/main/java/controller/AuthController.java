@@ -8,10 +8,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import security.JwtUtil;
 import service.UsuarioService;
 
 import static security.JwtUtil.gerarToken;
+
 
 @RestController
 @RequestMapping("/auth")

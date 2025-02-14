@@ -2,7 +2,6 @@ package controller;
 
 import lombok.RequiredArgsConstructor;
 import model.Produto;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import service.ProdutoService;
@@ -12,6 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/produtos")
 @RequiredArgsConstructor
+//@CrossOrigin(origins = "http://localhost:5173", allowedHeaders = "*", allowCredentials = "true")
 public class ProdutoController {
     private final ProdutoService produtoService;
 
@@ -45,4 +45,10 @@ public class ProdutoController {
         produtoService.deletarProduto(id);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/teste")
+    public String teste(){
+        return "Teste";
+    }
+
 }
